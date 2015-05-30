@@ -1,11 +1,23 @@
 ﻿Public Class Address
 
+    Private _uuid As String = String.Empty
     Private _addressType As ENUM_ADDRESS_TYPE = ENUM_ADDRESS_TYPE.NONE
     Private _zipCode As String = String.Empty
     Private _prefecture As String = String.Empty
     Private _city As String = String.Empty
     Private _address_1 As String = String.Empty
     Private _address_2 As String = String.Empty
+
+    Public Sub New()
+        Me._uuid = System.Guid.NewGuid.ToString
+    End Sub
+
+    Public ReadOnly Property UUID As String
+        Get
+            Return Me._uuid
+        End Get
+    End Property
+
 
     Public Property AddressType As ENUM_ADDRESS_TYPE
         Get

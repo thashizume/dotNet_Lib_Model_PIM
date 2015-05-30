@@ -5,6 +5,10 @@
     Private _contactName As String = String.Empty
     Private _contactValue As String = String.Empty
 
+    Public Sub New()
+        Me._uuid = System.Guid.NewGuid.ToString
+    End Sub
+
     Public ReadOnly Property UUID As String
         Get
             Return Me._uuid
